@@ -5,10 +5,6 @@ from werkzeug.useragents import UserAgentParser
 
 app = Flask(__name__)
 
-houses: list[str] = ['hufflepuff',
-                     'slytherin', 'gryffindor', 'ravenclaw']
-user_number: int = 0
-
 
 class user:
     id: int
@@ -23,6 +19,10 @@ class user:
         self.house = house
 
 
+users: list[user] = []
+user_number: int = 0
+
+
 def find_house(animal: str) -> str:
     if animal == 'eagle':
         return 'ravenclaw'
@@ -32,9 +32,6 @@ def find_house(animal: str) -> str:
         return 'hufflepuff'
     else:
         return 'slytherin'
-
-
-users: list[user] = []
 
 
 @app.route("/")

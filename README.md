@@ -14,9 +14,11 @@ and then
 
 `python app.py`
 
-or 
+or for hot reload
 
-`python dev.py ` for hot reload
+`pip install livereload`
+
+`python dev.py ` 
 
 
 
