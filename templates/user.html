@@ -31,28 +31,10 @@
 
     <!-- content -->
     <div class='container'>
-        <form method="post">
-            <label for="fname">First name:</label>
-            <br />
-            <input type="text" id="fname" name="fname">
-            <br />
-            <br />
-            <label for="lname">Last name:</label>
-            <br />
-            <input type="text" id="lname" name="lname">
-            <br />
-            <br />
-            <label for="animal">Favorite animal:</label>
-            <select id="animal" name="animal">
-                <option value="lion">lion</option>
-                <option value="snake">snake</option>
-                <option value="eagle">eagle</option>
-                <option value="badger">badger</option>
-            </select>
-            <br />
-            <br />
-            <input type="submit" value="Submit">
-        </form>
+        <p>Hello {{user.first_name}} {{user.last_name}}</p>
+        <p>You are in {{user.house}} !!!</p>
+
+
     </div>
 </body>
 
