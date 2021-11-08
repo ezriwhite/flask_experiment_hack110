@@ -31,6 +31,15 @@ body {
   height: 6.2em;
 }
 
+
+.navbar-expand {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  flex-flow: row nowrap;
+  -webkit-box-pack: start;
+  justify-content: flex-start;
+}
+
 .nav-item { 
   margin-left: 2em;  
   vertical-align: bottom;

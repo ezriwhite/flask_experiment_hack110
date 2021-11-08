@@ -1,37 +1,11 @@
 from flask import Flask, render_template, request
-from flask.templating import Environment
-from livereload import Server
-from werkzeug.useragents import UserAgentParser
+from helpers import user, find_house
 
 app = Flask(__name__)
 
 
-class user:
-    id: int
-    first_name: str
-    last_name: str
-    house: str
-
-    def __init__(self, id: int, fname: str, lname: str, house: str):
-        self.id = id
-        self.first_name = fname
-        self.last_name = lname
-        self.house = house
-
-
 users: list[user] = []
 user_number: int = 0
-
-
-def find_house(animal: str) -> str:
-    if animal == 'eagle':
-        return 'ravenclaw'
-    elif animal == 'lion':
-        return 'gryffindor'
-    elif animal == 'badger':
-        return 'hufflepuff'
-    else:
-        return 'slytherin'
 
 
 @app.route("/")
