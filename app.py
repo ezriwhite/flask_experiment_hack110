@@ -1,7 +1,7 @@
 from flask import Flask, render_template, request
 from helpers import user, find_house
 
-app = Flask(__name__)
+app: Flask = Flask(__name__)
 
 
 users: list[user] = []
@@ -13,13 +13,13 @@ def index():
     return render_template('index.html')
 
 
-@app.route('/results')
-def results():
-    return render_template('results.html', users=users)
+@app.route('/all-results')
+def all_results():
+    return render_template('all-results.html', users=users)
 
 
 @app.route('/user<usernumber>')
-def usernumber(usernumber):
+def display_user(usernumber: str):
     return render_template('user.html', user=users[int(usernumber)])
 
 
@@ -29,18 +29,18 @@ def quiz():
         global users
         global user_number
 
-        fname = request.form['fname']
-        lname = request.form['lname']
-        animal = request.form['animal']
+        fname: str = request.form['fname']
+        lname: str = request.form['lname']
+        animal: str = request.form['animal']
 
         if fname == '' or lname == '':
             return render_template("quiz.html")
 
-        house = find_house(animal)
-        new_user = user(user_number, fname, lname, house)
+        house: str = find_house(animal)
+        new_user: user = user(user_number, fname, lname, house)
+        users.append(new_user)
 
         user_number += 1
-        users.append(new_user)
 
         return render_template("result.html", house=house)
     return render_template("quiz.html")

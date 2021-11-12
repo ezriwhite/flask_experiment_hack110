@@ -13,10 +13,10 @@ class user:
 
 def find_house(animal: str) -> str:
     if animal == 'eagle':
-        return 'ravenclaw'
+        return 'Ravenclaw'
     elif animal == 'lion':
-        return 'gryffindor'
+        return 'Gryffindor'
     elif animal == 'badger':
-        return 'hufflepuff'
+        return 'Hufflepuff'
     else:
-        return 'slytherin'
+        return 'Slytherin'
